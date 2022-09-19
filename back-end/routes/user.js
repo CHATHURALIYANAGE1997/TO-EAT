@@ -3,6 +3,7 @@ const connection=require('../connection');
 const router=express.Router();
 const bcrypt = require("bcrypt");
 
+
 router.post('/signup',(req,res)=>{
     let user=req.body;
     query='select email,password,role,accountstatus from user where email=?'
@@ -11,7 +12,14 @@ router.post('/signup',(req,res)=>{
             if(results.length<=0){
                 let string=require('crypto').randomBytes(64).toString('hex');
                 user.password=setPassword(user.password);
-                query="insert into user(name,email,password,contactnumber,verificationcode,accountstatus,role) values(?,?,?,?,'false','user')"
+                query="insert into user(name,email,password,contactnumber,verificationcode,accountstatus,role) values(?,?,?,?,'false','user')";
+                connection.query(query,[user.name,user.email,user.password,user.contactnumber,string],(err,results)=>{
+                    if(!err){
+                        return res.status(200).json({message:"Successfully signup"});
+                    }else{
+                        return res.status(500).json(err);
+                    }
+                })
             }else{
                 return res.status(400).json({message:'Email is alredy exite'});
             }
