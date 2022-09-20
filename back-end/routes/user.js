@@ -53,7 +53,10 @@ router.post('/login', (req, res) => {
     })
 })
 
-
+router.post('/forgotpassword',(req,res)=>{
+    const user=req.body;
+    
+})
 
 UserSchema.methods.setPassword = function (password) {
 
@@ -63,5 +66,14 @@ UserSchema.methods.setPassword = function (password) {
     this.hash = crypto.pbkdf2Sync(password, this.salt,
         1000, 64, `sha512`).toString(`hex`);
 };
+
+
+var trans=nodemailer.createTransport({
+    service:'gmail',
+    auth:{
+        user:process.env.EMAIL,
+        password:process.env.PASSWORD
+    }
+})
 
 module.exports = router;
