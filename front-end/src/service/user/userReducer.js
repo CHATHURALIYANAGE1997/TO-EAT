@@ -4,3 +4,6 @@ const initialState = {
     users: [],
     error: "",
 };
+
+
+export default reducer;
