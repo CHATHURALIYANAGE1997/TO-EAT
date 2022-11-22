@@ -21,3 +21,9 @@ const loginRequest = () => {
         type: AT.LOGIN_REQUEST,
     };
 };
+
+const logoutRequest = () => {
+    return {
+        type: AT.LOGOUT_REQUEST,
+    };
+};
