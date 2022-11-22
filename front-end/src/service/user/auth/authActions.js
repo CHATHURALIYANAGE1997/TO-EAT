@@ -15,3 +15,9 @@ export const logoutUser = () => {
         dispatch(success({ username: "", isLoggedIn: false }));
     };
 };
+
+const loginRequest = () => {
+    return {
+        type: AT.LOGIN_REQUEST,
+    };
+};
