@@ -5,5 +5,7 @@ const initialState = {
     error: "",
 };
 
+const reducer = (state = initialState, action) => {
 
+};
 export default reducer;
