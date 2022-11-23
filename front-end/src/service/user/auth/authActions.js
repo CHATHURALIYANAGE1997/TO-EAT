@@ -27,3 +27,10 @@ const logoutRequest = () => {
         type: AT.LOGOUT_REQUEST,
     };
 };
+
+export const success = (isLoggedIn) => {
+    return {
+        type: AT.SUCCESS,
+        payload: isLoggedIn,
+    };
+};
