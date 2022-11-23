@@ -34,3 +34,10 @@ export const success = (isLoggedIn) => {
         payload: isLoggedIn,
     };
 };
+
+const failure = () => {
+    return {
+        type: AT.FAILURE,
+        payload: false,
+    };
+};
