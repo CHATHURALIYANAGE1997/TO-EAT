@@ -55,7 +55,20 @@ router.post('/login', (req, res) => {
 
 router.post('/forgotpassword',(req,res)=>{
     const user=req.body;
-    
+    query="select email from user where email=?";
+    connection.query(query, [user.email], (err, results) => {
+      if(!err){
+          const resp={result};
+          if(!resp==null){
+                //send mail to  user with the link
+                return res.status(200).json({ message: "Check your email" });
+          }else{
+                 return res.status(400).json({ message: "Your email is unvaild" });
+          }
+      }
+        else{
+      }  
+    })
 })
 
 UserSchema.methods.setPassword = function (password) {
