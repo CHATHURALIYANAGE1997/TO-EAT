@@ -3,6 +3,18 @@ import {Link} from "react-router-dom";
 import signinpic from "../components/Signin/signinpic.jpg";
 
 const Login = (props) => {
+
+const [error, setError] = useState();
+    const [show, setShow] = useState(true);
+
+    const initialState = {
+
+        email: "",
+        password: "",
+    };
+
+
+
 return (
 <div>
             <div className="mt-5 p-5 text-left signincontainer">
