@@ -7,3 +7,5 @@ const initialState = {
     isLoggedIn: "",
     role:""
 };
+
+export default reducer;
