@@ -13,6 +13,13 @@ const [error, setError] = useState();
         password: "",
     };
 
+    const [user, setUser] = useState(initialState);
+
+    const credentialChange = (event) => {
+        const { name, value } = event.target;
+        setUser({ ...user, [name]: value });
+        
+    };
 
 
 return (
