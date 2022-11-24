@@ -43,7 +43,7 @@ router.post('/login', (req, res) => {
             if (results.length > 0 && bcrypt.compare(password, results[0].password && results[0].accountstatus == 'true')) {
                 const resp = { email: results[0].email, role: results[0].role }
                 const accesstoken = jwt.sign(resp, process.env.TOKEN, { expiresIn: '4h' })
-                return res.status(200).json({ token: accesstoken });
+                return res.status(200).json({ token: accesstoken,role:role });
             } else {
                 return res.status(400).json({ message: "Wrong email and password" });
             }
