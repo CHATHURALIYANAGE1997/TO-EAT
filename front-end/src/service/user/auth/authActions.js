@@ -12,7 +12,7 @@ export const authenticateUser = (email, password) => async (dispatch) => {
             email: email,
             password: password,
         });
-        localStorage.setItem("jwtToken", response.data.token);
+        //localStorage.setItem("jwtToken", response.data.token);
         //console.log(response.data);
         dispatch(success({ jwt:response.data.token,username: response.data.name, isLoggedIn: true, role: response.data.role, }));
         return Promise.resolve(response);
