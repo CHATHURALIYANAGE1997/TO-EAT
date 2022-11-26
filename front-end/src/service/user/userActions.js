@@ -34,3 +34,10 @@ const userRequest = () => {
         type: UT.USER_REQUEST,
     };
 };
+
+const userSavedSuccess = (user) => {
+    return {
+        type: UT.USER_SAVED_SUCCESS,
+        payload: user,
+    };
+};
