@@ -28,3 +28,9 @@ export const forgotpassword = (userObject) => async (dispatch) => {
         return Promise.reject(error);
     }
 };
+
+const userRequest = () => {
+    return {
+        type: UT.USER_REQUEST,
+    };
+};
