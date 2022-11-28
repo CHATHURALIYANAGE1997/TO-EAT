@@ -29,6 +29,20 @@ export const forgotpassword = (userObject) => async (dispatch) => {
     }
 };
 
+export const verifyuserr=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
+    dispatch(userRequest());
+    try {
+        const response = axios.get(VERIFY_URL)
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
+
 const userRequest = () => {
     return {
         type: UT.USER_REQUEST,
@@ -41,3 +55,5 @@ const userSavedSuccess = (user) => {
         payload: user,
     };
 };
+
+
