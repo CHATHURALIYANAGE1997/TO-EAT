@@ -56,4 +56,10 @@ const userSavedSuccess = (user) => {
     };
 };
 
+const userSuccess = (users) => {
+    return {
+        type: UT.USER_SUCCESS,
+        payload: users,
+    };
+};
 
