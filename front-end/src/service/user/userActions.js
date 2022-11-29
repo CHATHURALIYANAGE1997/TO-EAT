@@ -63,3 +63,9 @@ const userSuccess = (users) => {
     };
 };
 
+const userFailure = (error) => {
+    return {
+        type: UT.USER_FAILURE,
+        payload: error,
+    };
+};
