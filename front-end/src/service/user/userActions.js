@@ -29,7 +29,7 @@ export const forgotpassword = (userObject) => async (dispatch) => {
     }
 };
 
-export const verifyuserr=(code)=>async (dispatch)=>{
+export const verifyuser=(code)=>async (dispatch)=>{
     const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
     dispatch(userRequest());
     try {
