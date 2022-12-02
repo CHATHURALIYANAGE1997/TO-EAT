@@ -43,10 +43,10 @@ export const forgotpassword = (userObject) => async (dispatch) => {
 };
 
 export const confirmpassworduser=(code)=>async (dispatch)=>{
-    const VERIFY_URL=`http://localhost:8080/user/confirmpassword/${code}`;
+    const VERIFY_URLUSER=`http://localhost:8080/user/confirmpassword/${code}`;
     dispatch(userRequest());
     try {
-        const response = axios.get(VERIFY_URL)
+        const response = axios.get(VERIFY_URLUSER)
         dispatch(userSavedSuccess(response));
         return Promise.resolve(response);
     }catch (error) {
@@ -57,10 +57,10 @@ export const confirmpassworduser=(code)=>async (dispatch)=>{
 
 
 export const confirmpasswordadmine=(code)=>async (dispatch)=>{
-    const VERIFY_URL=`http://localhost:8080/user/confirmpassword/${code}`;
+    const VERIFY_URLADMINE=`http://localhost:8080/user/confirmpasswordadmine/${code}`;
     dispatch(userRequest());
     try {
-        const response = axios.get(VERIFY_URL)
+        const response = axios.get(VERIFY_URLADMINE)
         dispatch(userSavedSuccess(response));
         return Promise.resolve(response);
     }catch (error) {
