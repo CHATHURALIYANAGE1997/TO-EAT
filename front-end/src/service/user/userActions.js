@@ -42,7 +42,7 @@ export const forgotpassword = (userObject) => async (dispatch) => {
     }
 };
 
-export const confirmpassword=(code)=>async (dispatch)=>{
+export const confirmpassworduser=(code)=>async (dispatch)=>{
     const VERIFY_URL=`http://localhost:8080/user/confirmpassword/${code}`;
     dispatch(userRequest());
     try {
@@ -54,6 +54,21 @@ export const confirmpassword=(code)=>async (dispatch)=>{
         return Promise.reject(error);
     }
 }
+
+
+export const confirmpasswordadmine=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/confirmpassword/${code}`;
+    dispatch(userRequest());
+    try {
+        const response = axios.get(VERIFY_URL)
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
 
 const userRequest = () => {
     return {
