@@ -15,6 +15,19 @@ export const registerUser = (userObject) => async (dispatch) => {
     }
 };
 
+export const verifyuser=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
+    dispatch(userRequest());
+    try {
+        const response = axios.get(VERIFY_URL)
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
 export const forgotpassword = (userObject) => async (dispatch) => {
     console.log(userObject);
     const FORGOT_PASSWORD_URL="http://localhost:8080/user/forgotpassword"
@@ -29,8 +42,8 @@ export const forgotpassword = (userObject) => async (dispatch) => {
     }
 };
 
-export const verifyuser=(code)=>async (dispatch)=>{
-    const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
+export const confirmpassword=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/confirmpassword/${code}`;
     dispatch(userRequest());
     try {
         const response = axios.get(VERIFY_URL)
@@ -41,7 +54,6 @@ export const verifyuser=(code)=>async (dispatch)=>{
         return Promise.reject(error);
     }
 }
-
 
 const userRequest = () => {
     return {
