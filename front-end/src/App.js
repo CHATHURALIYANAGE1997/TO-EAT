@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, BrowserRouter as Routes, Route } from 'react-router-dom';
 import { Switch as Switch } from 'react-router-dom';
 import Login from './pages/Login'
-import signup from './pages/Signup'
+import Signup from './pages/Signup'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={Login}></Route>
               <Route path="/login" component={Login}></Route>
-              <Route path="/signup" component={signup}></Route>
+              <Route path="/signup" component={Signup}></Route>
             </Switch>  
           </div>
         </Routes>
