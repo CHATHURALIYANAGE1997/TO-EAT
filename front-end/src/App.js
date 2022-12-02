@@ -3,7 +3,7 @@ import { BrowserRouter, BrowserRouter as Routes, Route } from 'react-router-dom'
 import { Switch as Switch } from 'react-router-dom';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-
+import Welcomepage from './pages/Welcomepage'
 function App() {
   return (
     <div>
