@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, BrowserRouter as Routes, Route } from 'react-router-dom';
 import { Switch as Switch } from 'react-router-dom';
-import Login from './pages/login'
-import signup from './pages/signup'
+import Login from './pages/Login'
+import signup from './pages/Signup'
 
 function App() {
   return (
