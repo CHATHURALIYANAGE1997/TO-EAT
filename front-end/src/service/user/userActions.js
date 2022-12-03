@@ -57,7 +57,7 @@ export const confirmpassworduser=(code)=>async (dispatch)=>{
 
 
 export const confirmpasswordadmine=(code)=>async (dispatch)=>{
-    const VERIFY_URLADMINE=`http://localhost:8080/user/confirmpasswordadmine/${code}`;
+    const VERIFY_URLADMINE=`http://localhost:8080/admine/confirmpasswordadmine/${code}`;
     dispatch(userRequest());
     try {
         const response = axios.get(VERIFY_URLADMINE)
