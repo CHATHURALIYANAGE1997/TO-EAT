@@ -10,6 +10,6 @@ app.use(express.json());
 app.use('./user',userRoute);
 app.use('./customer',userRoute);
 app.use('./admin',userRoute);
-
+app.use('./category',userRoute);
 
 module.exports=app;
